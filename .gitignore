@@ -5,6 +5,9 @@ build/
 dist/
 wheels/
 *.egg-info
+*.zip
+requirements.temp.txt
+package-temp/
 
 # Virtual environments
 .venv
