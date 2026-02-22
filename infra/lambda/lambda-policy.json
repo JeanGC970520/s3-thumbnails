@@ -2,6 +2,7 @@
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Sid": "AllowLambdaToWriteLogs",
             "Effect": "Allow",
             "Action": [
                 "logs:CreateLogGroup",
@@ -11,6 +12,7 @@
             "Resource": "*"
         },
         {
+            "Sid": "AllowLambdaToAccessS3Buckets",
             "Effect": "Allow",
             "Action": [
                 "s3:GetObject",
@@ -20,6 +22,16 @@
                 "arn:aws:s3:::landing-images/*",
                 "arn:aws:s3:::thumbnails/*"
             ]
+        },
+        {
+            "Sid": "AllowLambdaToAccessDynamoDB",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:PutItem",
+                "dynamodb:GetItem",
+                "dynamodb:UpdateItem"
+            ],
+            "Resource": "arn:aws:dynamodb:us-east-1:000000000000:table/*"
         }
     ]
 }
