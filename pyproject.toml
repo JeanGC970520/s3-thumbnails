@@ -8,3 +8,9 @@ dependencies = [
     "boto3>=1.42.52",
     "pillow>=11.3.0",
 ]
+
+[dependency-groups]
+dev = [
+    "awscli-local>=0.22.2",
+    "localstack>=4.9.2",
+]
