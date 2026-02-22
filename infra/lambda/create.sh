@@ -6,6 +6,7 @@ awslocal lambda create-function \
     --timeout 10 \
     --memory-size 256 \
     --role arn:aws:iam::000000000000:role/thumbnail-lambda-execution-role \
+    --environment Variables="{THUMBNAIL_BUCKET_NAME=thumbnails, METADATA_TABLE=ThumbnailsMetadata}" \
     --zip-file fileb://services/function.zip
 
 # Editar resource policy de la Lambda para permitir que el servicio S3 invoque la 
